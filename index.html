@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Championnat de France Karaté Seniors 2026 | Karaté Club de Chambly</title>
+    <meta name="description" content="Plus grand rendez-vous du karaté français. 4-5 Avril 2026 à Chambly. 400+ athletes, 2 disciplines, 8 titres en jeu.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo"></div>
+            <p class="mt-4 text-white font-semibold">CHAMBLY 2026</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🥋</div>
+                <div class="logo-text">
+                    <span>CHAMBLY 2026</span>
+                    <span>Championnat de France</span>
+                </div>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="editions.html">Éditions</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="resultats.html">Résultats</a></li>
+                    <li><a href="pratique.html">Pratique</a></li>
+                </ul>
+                
+                <a href="inscriptions.html" class="nav-cta">S'inscrire</a>
+                
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline id="hero-video">
+                <source src="https://www.youtube.com/watch?v=c-m4pOjtlT4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                Fédération Française de Karaté
+            </div>
+            
+            <h1>
+                CHAMPIONNAT DE FRANCE
+                <span>SENIORS 2026</span>
+            </h1>
+            
+            <p class="hero-date">4 & 5 Avril 2026 • Chambly, Oise</p>
+            
+            <div class="hero-cta">
+                <a href="inscriptions.html" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    S'inscrire
+                </a>
+                <a href="programme.html" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    Programme
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number" id="countdown-days">00</div>
+                    <div class="hero-stat-label">Jours</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number" id="countdown-hours">00</div>
+                    <div class="hero-stat-label">Heures</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number" id="countdown-minutes">00</div>
+                    <div class="hero-stat-label">Minutes</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number" id="countdown-seconds">00</div>
+                    <div class="hero-stat-label">Secondes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="presentation">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <span>L'Événement</span>
+                <h2>Le Plus Prestigieux Championnats de France</h2>
+                <p>Pour la deuxième année consécutive, Chambly accueille l'élite du karaté français lors de cet événement national majeur.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kumite (Combat)</h3>
+                        <p>Les meilleurs combattants de France s'affrontent dans des phases de poules qualificatives puis éliminatoires jusqu'à la finale.</p>
+                    </div>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18l10-10 10 10"/><path d="M12 8V2"/><path d="M8 2h4"/></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kata (Forme)</h3>
+                        <p>Les athletes démontrent leur maîtrise technique à travers des enchaînements traditionnels face à un jury d'experts.</p>
+                    </div>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>8 Titres en Jeu</h3>
+                        <p>Kata Homme/Femme et Combat Homme/Femme dans toutes les catégories de poids et niveaux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-red">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
+                <div class="animate-on-scroll">
+                    <div class="hero-stat-number counter" data-target="400" style="color: white;">0</div>
+                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Athlètes</div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="hero-stat-number counter" data-target="8" style="color: white;">0</div>
+                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Titres</div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="hero-stat-number counter" data-target="2" style="color: white;">0</div>
+                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Disciplines</div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="hero-stat-number counter" data-target="2" style="color: white;">0</div>
+                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Jours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Preview -->
+    <section class="section section-gray" id="programme">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <span>Programme</span>
+                <h2>Déroulement de l'Événement</h2>
+                <p>Deux journées intenses de compétition au plus haut niveau national.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
+                <div class="schedule-day animate-on-scroll">
+                    <div class="schedule-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" x2="12" y1="1" y2="3"/><line x1="12" x2="12" y1="21" y2="23"/><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"/><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"/><line x1="1" x2="3" y1="12" y2="12"/><line x1="21" x2="23" y1="12" y2="12"/><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"/><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"/></svg>
+                        <div>
+                            <h3>Samedi 4 Avril</h3>
+                            <span>Première journée</span>
+                        </div>
+                    </div>
+                    <div class="schedule-body">
+                        <div class="schedule-item">
+                            <div class="schedule-time">08:00</div>
+                            <div class="schedule-info">
+                                <h4>Ouverture du gymnase</h4>
+                                <p>Accueil des délégations</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">09:30</div>
+                            <div class="schedule-info">
+                                <h4>Cérémonie d'ouverture</h4>
+                                <p>Discours officiels</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">10:00</div>
+                            <div class="schedule-info">
+                                <h4>Début des compétitions</h4>
+                                <p>kata & Combat - Phases de poules</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">12:00</div>
+                            <div class="schedule-info">
+                                <h4>Pause Déjeuner</h4>
+                                <p>Restauration sur place</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">14:00</div>
+                            <div class="schedule-info">
+                                <h4>Reprise des compétitions</h4>
+                                <p>Phases éliminatoires</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schedule-day animate-on-scroll">
+                    <div class="schedule-header blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><trophy/><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/></svg>
+                        <div>
+                            <h3>Dimanche 5 Avril</h3>
+                            <span>Journée des finales</span>
+                        </div>
+                    </div>
+                    <div class="schedule-body">
+                        <div class="schedule-item">
+                            <div class="schedule-time">08:30</div>
+                            <div class="schedule-info">
+                                <h4>Ouverture du gymnase</h4>
+                                <p>Finalistes au rendez-vous</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">09:00</div>
+                            <div class="schedule-info">
+                                <h4>Finales kata</h4>
+                                <p>Pronostics & Émotion</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">11:00</div>
+                            <div class="schedule-info">
+                                <h4>Finales Combat</h4>
+                                <p>Les match-titres tant attendus</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">14:00</div>
+                            <div class="schedule-info">
+                                <h4>Cérémonie des médailles</h4>
+                                <p>Podium & hymnes</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">15:30</div>
+                            <div class="schedule-info">
+                                <h4>Cérémonie de clôture</h4>
+                                <p>Remise des prix spéciaux</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="programme.html" class="btn btn-primary">Voir le programme complet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section" style="background: var(--ffk-black);">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <span>Vidéo</span>
+                <h2 style="color: white;">Teaser 2026</h2>
+            </div>
+            
+            <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                            src="https://www.youtube.com/embed/vnYiRwlKdj0" 
+                            title="Championnat de France Karaté 2026" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="section section-gray" id="galerie">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <span>Galerie</span>
+                <h2>Éditions Précédentes</h2>
+                <p>Revivez l'ambiance exceptionnelle des compétitions à Chambly.</p>
+            </div>
+            
+            <div class="gallery-grid animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="https://pbs.twimg.com/media/FuK6H4-XMAAs2g9?format=jpg&name=large" alt="Championnat de France Karaté 2025">
+                    <div class="gallery-overlay">
+                        <span>Championnat 2025</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://pbs.twimg.com/media/FuK6H4-WwAAdy6r?format=jpg&name=large" alt="Karaté Chambly">
+                    <div class="gallery-overlay">
+                        <span>Équipe de France</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://pbs.twimg.com/media/FuK6H4-XEAAuF2y?format=jpg&name=large" alt="Kata Competition">
+                    <div class="gallery-overlay">
+                        <span>Finale Kata</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://pbs.twimg.com/media/FuK6H4-WAAAEfO6?format=jpg&name=large" alt="Combat Karaté">
+                    <div class="gallery-overlay">
+                        <span>Cérémonie</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="galerie.html" class="btn btn-primary">Voir toute la galerie</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <span>Organisation</span>
+                <h2>Les Organisateurs</h2>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;" class="animate-on-scroll">
+                <div style="text-align: center;">
+                    <div style="background: var(--ffk-gray-light); padding: 30px 50px; border-radius: 15px;">
+                        <h4 style="margin-bottom: 10px;">Organisé par</h4>
+                        <p style="font-weight: 700; font-size: 1.25rem; color: var(--ffk-red);">Fédération Française de Karaté</p>
+                        <p style="color: var(--ffk-gray-dark);">et Disciplines Associées</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: var(--ffk-gray-light); padding: 30px 50px; border-radius: 15px;">
+                        <h4 style="margin-bottom: 10px;">Club hôte</h4>
+                        <p style="font-weight: 700; font-size: 1.25rem; color: var(--ffk-blue);">Karaté Club de Chambly</p>
+                        <p style="color: var(--ffk-gray-dark);">Le Locomotive Camblysien</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-red">
+        <div class="container" style="text-align: center;">
+            <h2 class="animate-on-scroll" style="margin-bottom: 20px;">Vous êtes Athlète ?</h2>
+            <p class="animate-on-scroll" style="font-size: 1.25rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Les inscriptions se font via la plateforme fédérale FFkarate avec votre compte Sikada.
+            </p>
+            <div class="animate-on-scroll">
+                <a href="inscriptions.html" class="btn btn-secondary">Accéder aux inscriptions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">🥋</div>
+                        <div class="logo-text">
+                            <span style="color: white;">CHAMBLY 2026</span>
+                            <span>Championnat de France Seniors</span>
+                        </div>
+                    </div>
+                    <p style="opacity: 0.8; margin-bottom: 20px;">
+                        Le Karaté Club de Chambly est fier d'accueillir cette compétition nationale majeure.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 20a3.5 3.5 0 0 1 .5-7.5"/><rect width="20" height="15" x="2" y="5" rx="2"/><path d="M10.5 8.5L14 10l-3.5 2.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>导航</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="resultats.html">Résultats</a></li>
+                        <li><a href="inscriptions.html">Inscriptions</a></li>
+                        <li><a href="pratique.html">Informations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="pratique.html">Comment venir</a></li>
+                        <li><a href="pratique.html#contact">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Karaté Club de Chambly</li>
+                        <li>karate.chambly@gmail.com</li>
+                        <li>07 65 86 82 81</li>
+                        <li>60530 Chambly, Oise</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Karaté Club de Chambly - Tous droits réservés</p>
+                <p style="margin-top: 10px; font-size: 0.875rem;">Organisé avec la Fédération Française de Karaté</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
