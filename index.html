@@ -3,34 +3,896 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Championnat de France Seniors KARATE 2026 | Karaté Club de Chambly</title>
-    <meta name="description" content="Plus grand rendez-vous du karaté français. 4-5 Avril 2026 à Chambly. Organisé par FFKARATE et le Locomotive Camblysien.">
+    <title>Championnat de France Seniors Karaté 2026 | Chambly</title>
+    <meta name="description" content="Plus grand rendez-vous du karaté français. 4-5 Avril 2026 à Chambly (Oise). Organisé par FFKARATE et Le Locomotive Camblysien.">
+    
+    <!-- FFK Official Colors: #E30613 (Red), #003399 (Blue), #FFFFFF (White) -->
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* ==========================================================================
+           FFK OFFICIAL DESIGN SYSTEM - Sobre, Élégant, Professionnel
+           ========================================================================== */
+        
+        :root {
+            --ffk-red: #E30613;
+            --ffk-blue: #003399;
+            --ffk-white: #FFFFFF;
+            --ffk-black: #1A1A1A;
+            --ffk-gray-light: #F8F8F8;
+            --ffk-gray: #E5E5E5;
+            --ffk-gray-dark: #666666;
+        }
+        
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ffk-white);
+            color: var(--ffk-black);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s ease;
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* ==========================================================================
+           HEADER - FFK Style: Clean, Minimal, Official
+           ========================================================================== */
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid var(--ffk-gray);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text-main {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ffk-black);
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text-sub {
+            font-size: 0.7rem;
+            color: var(--ffk-red);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ffk-black);
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ffk-red);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--ffk-red);
+            color: white;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+        }
+        
+        .nav-cta:hover {
+            opacity: 0.9;
+            background: var(--ffk-red);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--ffk-black);
+        }
+        
+        /* ==========================================================================
+           HERO SECTION - Impactant, FFK Official
+           ========================================================================== */
+        
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--ffk-blue) 0%, #002266 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M40 40L20 20M40 40L60 20M40 40L20 60M40 40L60 60' stroke='%23ffffff' stroke-width='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 120px 24px 80px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 32px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-badge svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .hero-badge-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-title span {
+            display: block;
+            font-size: 0.45em;
+            font-weight: 400;
+            margin-top: 8px;
+            letter-spacing: 4px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .hero-date {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 48px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .hero-date::before,
+        .hero-date::after {
+            content: '—';
+            margin: 0 16px;
+            opacity: 0.5;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 2px;
+        }
+        
+        .btn-primary {
+            background: var(--ffk-red);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #C40510;
+            opacity: 1;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--ffk-blue);
+            border-color: white;
+            opacity: 1;
+        }
+        
+        /* Countdown */
+        .hero-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        
+        /* ==========================================================================
+           INFO BAR - Clean FFK Style
+           ========================================================================== */
+        
+        .info-bar {
+            background: var(--ffk-white);
+            border-bottom: 1px solid var(--ffk-gray);
+            padding: 20px 0;
+        }
+        
+        .info-bar-inner {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--ffk-gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+        }
+        
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--ffk-red);
+        }
+        
+        .info-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-label {
+            font-size: 0.75rem;
+            color: var(--ffk-gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ffk-black);
+        }
+        
+        /* ==========================================================================
+           SECTIONS - Clean & Professional
+           ========================================================================== */
+        
+        .section {
+            padding: 90px 0;
+        }
+        
+        .section-gray {
+            background: var(--ffk-gray-light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: var(--ffk-red);
+            color: white;
+            padding: 8px 24px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--ffk-black);
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            color: var(--ffk-gray-dark);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ==========================================================================
+           DISCIPLINES - Clean Cards
+           ========================================================================== */
+        
+        .disciplines-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .discipline-card {
+            background: var(--ffk-white);
+            border: 1px solid var(--ffk-gray);
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .discipline-card:hover {
+            border-color: var(--ffk-red);
+            box-shadow: 0 10px 40px rgba(227, 6, 19, 0.1);
+        }
+        
+        .discipline-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--ffk-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .discipline-card:hover .discipline-icon {
+            border-color: var(--ffk-red);
+            background: var(--ffk-red);
+        }
+        
+        .discipline-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--ffk-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .discipline-card:hover .discipline-icon svg {
+            color: white;
+        }
+        
+        .discipline-title {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        
+        .discipline-desc {
+            color: var(--ffk-gray-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* ==========================================================================
+           PROGRAM - Clean Timeline
+           ========================================================================== */
+        
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .program-day {
+            background: var(--ffk-white);
+            border: 1px solid var(--ffk-gray);
+        }
+        
+        .program-header {
+            background: var(--ffk-black);
+            color: white;
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .program-header.blue {
+            background: var(--ffk-blue);
+        }
+        
+        .program-date-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .program-date-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .program-date-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-date-main {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .program-date-sub {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .program-body {
+            padding: 10px 0;
+        }
+        
+        .program-item {
+            display: flex;
+            gap: 24px;
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--ffk-gray);
+        }
+        
+        .program-item:last-child {
+            border-bottom: none;
+        }
+        
+        .program-time {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ffk-red);
+            width: 80px;
+            flex-shrink: 0;
+        }
+        
+        .program-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .program-info p {
+            color: var(--ffk-gray-dark);
+            font-size: 0.9rem;
+        }
+        
+        /* ==========================================================================
+           STATS - Clean Numbers
+           ========================================================================== */
+        
+        .stats-section {
+            background: var(--ffk-black);
+            color: white;
+            padding: 70px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--ffk-red);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+        
+        /* ==========================================================================
+           ORGANIZERS - Clean Logos
+           ========================================================================== */
+        
+        .organizers {
+            padding: 60px 0;
+            border-top: 1px solid var(--ffk-gray);
+        }
+        
+        .organizers-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .organizer {
+            text-align: center;
+        }
+        
+        .organizer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .organizer-logo.ffk {
+            color: var(--ffk-red);
+        }
+        
+        .organizer-logo.locomotive {
+            color: var(--ffk-blue);
+        }
+        
+        .organizer-desc {
+            color: var(--ffk-gray-dark);
+            font-size: 0.9rem;
+        }
+        
+        .organizer-divider {
+            width: 1px;
+            height: 60px;
+            background: var(--ffk-gray);
+        }
+        
+        /* ==========================================================================
+           CTA SECTION
+           ========================================================================== */
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--ffk-blue) 0%, var(--ffk-red) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn-cta {
+            background: white;
+            color: var(--ffk-blue);
+            padding: 20px 50px;
+        }
+        
+        .btn-cta:hover {
+            background: var(--ffk-white);
+            color: var(--ffk-red);
+            opacity: 1;
+        }
+        
+        /* ==========================================================================
+           FOOTER - Minimal FFK Style
+           ========================================================================== */
+        
+        .footer {
+            background: var(--ffk-black);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-brand .logo-text-main {
+            color: white;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            color: white;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE
+           ========================================================================== */
+        
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .disciplines-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-countdown {
+                gap: 20px;
+            }
+            
+            .countdown-value {
+                font-size: 2.2rem;
+            }
+            
+            .disciplines-grid,
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .stat-value {
+                font-size: 2.5rem;
+            }
+            
+            .organizers-inner {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .organizer-divider {
+                width: 60px;
+                height: 1px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
 </head>
 <body>
-    <!-- Loader -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-logo"></div>
-            <p class="mt-4 text-white font-semibold">CHAMBLY 2026</p>
-        </div>
-    </div>
-
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="header">
         <div class="header-inner">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🥋</div>
+                <div class="logo-icon">
+                    <!-- FFK Emblem SVG -->
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#E30613"/>
+                        <path d="M14 24L24 14L34 24L24 34L14 24Z" fill="white"/>
+                        <path d="M24 24L34 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M34 24L24 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M24 14V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 24H34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <div class="logo-text">
-                    <span>LE LOCOMOTIVE CAMBLYSIEN</span>
-                    <span>Championnat de France Seniors KARATE 2026</span>
+                    <span class="logo-text-main">LE LOCOMOTIVE CAMBLYSIEN</span>
+                    <span class="logo-text-sub">FFKARATE</span>
                 </div>
             </a>
             
@@ -55,378 +917,368 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="hero-bg">
-            <video autoplay muted loop playsinline id="hero-video">
-                <source src="https://www.youtube.com/watch?v=c-m4pOjtlT4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-pattern"></div>
-        
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                Fédération Française de Karaté
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                    <path d="M4 22h16"/>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+                <span class="hero-badge-text">FÉDÉRATION FRANÇAISE DE KARATÉ</span>
             </div>
             
-            <h1>
+            <h1 class="hero-title">
                 CHAMPIONNAT DE FRANCE
-                <span>SENIORS KARATE 2026</span>
+                <span>SENIORS KARATÉ</span>
             </h1>
             
-            <p class="hero-date">4 & 5 Avril 2026 • Chambly, Oise</p>
+            <p class="hero-subtitle">Le Plus Grand Rendez-vous du Karaté Français</p>
+            
+            <p class="hero-date">4 — 5 AVRIL 2026 — CHAMBLY (OISE)</p>
             
             <div class="hero-cta">
                 <a href="inscriptions.html" class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
                     S'inscrire
                 </a>
-                <a href="programme.html" class="btn btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                    Programme
-                </a>
+                <a href="programme.html" class="btn btn-secondary">Voir le programme</a>
             </div>
             
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-number" id="countdown-days">00</div>
-                    <div class="hero-stat-label">Jours</div>
+            <div class="hero-countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Jours</div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" id="countdown-hours">00</div>
-                    <div class="hero-stat-label">Heures</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Heures</div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" id="countdown-minutes">00</div>
-                    <div class="hero-stat-label">Minutes</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" id="countdown-seconds">00</div>
-                    <div class="hero-stat-label">Secondes</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Secondes</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="presentation">
+    <!-- INFO BAR -->
+    <div class="info-bar">
+        <div class="info-bar-inner">
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="18" x="3" y="4" rx="2"/>
+                        <line x1="16" x2="16" y1="2" y2="6"/>
+                        <line x1="8" x2="8" y1="2" y2="6"/>
+                        <line x1="3" x2="21" y1="10" y2="10"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">Dates</span>
+                    <span class="info-value">4 — 5 Avril 2026</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">Lieu</span>
+                    <span class="info-value">Chambly, Oise</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">Athlètes</span>
+                    <span class="info-value">~400 Compétiteurs</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <trophy/>
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                        <path d="M4 22h16"/>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">Titres</span>
+                    <span class="info-value">8 Championnats de France</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DISCIPLINES -->
+    <section class="section">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <span>L'Événement</span>
-                <h2>Le Plus Prestigieux Championnats de France</h2>
-                <p>Pour la deuxième année consécutive, Chambly accueille l'élite du karaté français lors de cet événement national majeur.</p>
+            <div class="section-header">
+                <span class="section-tag">Les Disciplines</span>
+                <h2 class="section-title">Deux Épreuves, Un Titre</h2>
+                <p class="section-subtitle">Les athletes s'affrontent sur deux épreuves distinctes pour décrocher le titre de Champion de France.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            <div class="disciplines-grid">
+                <div class="discipline-card">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
                     </div>
-                    <div class="card-content">
-                        <h3>Kumite (Combat)</h3>
-                        <p>Les meilleurs combattants de France s'affrontent dans des phases de poules qualificatives puis éliminatoires jusqu'à la finale.</p>
-                    </div>
+                    <h3 class="discipline-title">KUMITE</h3>
+                    <p class="discipline-desc">Le combat. Deux athletes s'affrontent selon un protocole strict. Phases de poules puis éliminatoires jusqu'à la finale.</p>
                 </div>
                 
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18l10-10 10 10"/><path d="M12 8V2"/><path d="M8 2h4"/></svg>
+                <div class="discipline-card">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 18l10-10 10 10"/>
+                            <path d="M12 8V2"/>
+                            <path d="M8 2h4"/>
+                        </svg>
                     </div>
-                    <div class="card-content">
-                        <h3>Kata (Forme)</h3>
-                        <p>Les athletes démontrent leur maîtrise technique à travers des enchaînements traditionnels face à un jury d'experts.</p>
-                    </div>
+                    <h3 class="discipline-title">KATA</h3>
+                    <p class="discipline-desc">La forme. Un enchaînement technique exécuté face à un jury d'experts. Beauté et précision sont évaluées.</p>
                 </div>
                 
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <div class="discipline-card">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
                     </div>
-                    <div class="card-content">
-                        <h3>8 Titres en Jeu</h3>
-                        <p>Kata Homme/Femme et Combat Homme/Femme dans toutes les catégories de poids et niveaux.</p>
-                    </div>
+                    <h3 class="discipline-title">8 TITRES</h3>
+                    <p class="discipline-desc">Kata Homme, Kata Femme, Combat Hommes (poids), Combat Femmes (poids). Chaque victoire compte.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="section section-red">
+    <!-- PROGRAMME -->
+    <section class="section section-gray">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
-                <div class="animate-on-scroll">
-                    <div class="hero-stat-number counter" data-target="400" style="color: white;">0</div>
-                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Athlètes</div>
-                </div>
-                <div class="animate-on-scroll">
-                    <div class="hero-stat-number counter" data-target="8" style="color: white;">0</div>
-                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Titres</div>
-                </div>
-                <div class="animate-on-scroll">
-                    <div class="hero-stat-number counter" data-target="2" style="color: white;">0</div>
-                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Disciplines</div>
-                </div>
-                <div class="animate-on-scroll">
-                    <div class="hero-stat-number counter" data-target="2" style="color: white;">0</div>
-                    <div class="hero-stat-label" style="color: rgba(255,255,255,0.8);">Jours</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Preview -->
-    <section class="section section-gray" id="programme">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <span>Programme</span>
-                <h2>Déroulement de l'Événement</h2>
-                <p>Deux journées intenses de compétition au plus haut niveau national.</p>
+            <div class="section-header">
+                <span class="section-tag">Programme</span>
+                <h2 class="section-title">Déroulement</h2>
+                <p class="section-subtitle">Deux journées de compétition au plus haut niveau national.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
-                <div class="schedule-day animate-on-scroll">
-                    <div class="schedule-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" x2="12" y1="1" y2="3"/><line x1="12" x2="12" y1="21" y2="23"/><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"/><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"/><line x1="1" x2="3" y1="12" y2="12"/><line x1="21" x2="23" y1="12" y2="12"/><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"/><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"/></svg>
-                        <div>
-                            <h3>Samedi 4 Avril</h3>
-                            <span>Première journée</span>
+            <div class="program-grid">
+                <div class="program-day">
+                    <div class="program-header">
+                        <div class="program-date-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" x2="12" y1="1" y2="3"/>
+                                <line x1="12" x2="12" y1="21" y2="23"/>
+                            </svg>
+                        </div>
+                        <div class="program-date-text">
+                            <span class="program-date-main">SAMEDI 4 AVRIL</span>
+                            <span class="program-date-sub">Phase de poules & Éliminatoires</span>
                         </div>
                     </div>
-                    <div class="schedule-body">
-                        <div class="schedule-item">
-                            <div class="schedule-time">08:00</div>
-                            <div class="schedule-info">
+                    <div class="program-body">
+                        <div class="program-item">
+                            <span class="program-time">08:00</span>
+                            <div class="program-info">
                                 <h4>Ouverture du gymnase</h4>
                                 <p>Accueil des délégations</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">09:30</div>
-                            <div class="schedule-info">
+                        <div class="program-item">
+                            <span class="program-time">09:30</span>
+                            <div class="program-info">
                                 <h4>Cérémonie d'ouverture</h4>
                                 <p>Discours officiels</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">10:00</div>
-                            <div class="schedule-info">
+                        <div class="program-item">
+                            <span class="program-time">10:00</span>
+                            <div class="program-info">
                                 <h4>Début des compétitions</h4>
-                                <p>kata & Combat - Phases de poules</p>
+                                <p>Kata & Combat - Phases de poules</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">12:00</div>
-                            <div class="schedule-info">
-                                <h4>Pause Déjeuner</h4>
-                                <p>Restauration sur place</p>
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">14:00</div>
-                            <div class="schedule-info">
-                                <h4>Reprise des compétitions</h4>
+                        <div class="program-item">
+                            <span class="program-time">14:00</span>
+                            <div class="program-info">
+                                <h4>Reprise</h4>
                                 <p>Phases éliminatoires</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="schedule-day animate-on-scroll">
-                    <div class="schedule-header blue">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><trophy/><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/></svg>
-                        <div>
-                            <h3>Dimanche 5 Avril</h3>
-                            <span>Journée des finales</span>
+                <div class="program-day">
+                    <div class="program-header blue">
+                        <div class="program-date-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <trophy/>
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                                <path d="M4 22h16"/>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                            </svg>
+                        </div>
+                        <div class="program-date-text">
+                            <span class="program-date-main">DIMANCHE 5 AVRIL</span>
+                            <span class="program-date-sub">Journée des finales</span>
                         </div>
                     </div>
-                    <div class="schedule-body">
-                        <div class="schedule-item">
-                            <div class="schedule-time">08:30</div>
-                            <div class="schedule-info">
-                                <h4>Ouverture du gymnase</h4>
+                    <div class="program-body">
+                        <div class="program-item">
+                            <span class="program-time">08:30</span>
+                            <div class="program-info">
+                                <h4>Ouverture</h4>
                                 <p>Finalistes au rendez-vous</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">09:00</div>
-                            <div class="schedule-info">
-                                <h4>Finales kata</h4>
-                                <p>Pronostics & Émotion</p>
+                        <div class="program-item">
+                            <span class="program-time">09:00</span>
+                            <div class="program-info">
+                                <h4>Finales Kata</h4>
+                                <p>Podium Femme puis Homme</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">11:00</div>
-                            <div class="schedule-info">
+                        <div class="program-item">
+                            <span class="program-time">11:00</span>
+                            <div class="program-info">
                                 <h4>Finales Combat</h4>
-                                <p>Les match-titres tant attendus</p>
+                                <p>Les match-titres</p>
                             </div>
                         </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">14:00</div>
-                            <div class="schedule-info">
-                                <h4>Cérémonie des médailles</h4>
-                                <p>Podium & hymnes</p>
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-time">15:30</div>
-                            <div class="schedule-info">
+                        <div class="program-item">
+                            <span class="program-time">14:30</span>
+                            <div class="program-info">
                                 <h4>Cérémonie de clôture</h4>
-                                <p>Remise des prix spéciaux</p>
+                                <p>Remise des médailles et prix</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="programme.html" class="btn btn-primary">Voir le programme complet</a>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="programme.html" class="btn btn-primary">Programme complet</a>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="section" style="background: var(--ffk-black);">
+    <!-- STATS -->
+    <section class="stats-section">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <span>Vidéo</span>
-                <h2 style="color: white;">Teaser 2026</h2>
-            </div>
-            
-            <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                            src="https://www.youtube.com/embed/vnYiRwlKdj0" 
-                            title="Championnat de France Karaté 2026" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">400</div>
+                    <div class="stat-label">Athlètes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Titres</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Disciplines</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Jours</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Preview -->
-    <section class="section section-gray" id="galerie">
+    <!-- ORGANISERS -->
+    <section class="organizers">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <span>Galerie</span>
-                <h2>Éditions Précédentes</h2>
-                <p>Revivez l'ambiance exceptionnelle des compétitions à Chambly.</p>
-            </div>
-            
-            <div class="gallery-grid animate-on-scroll">
-                <div class="gallery-item">
-                    <img src="https://pbs.twimg.com/media/FuK6H4-XMAAs2g9?format=jpg&name=large" alt="Championnat de France Karaté 2025">
-                    <div class="gallery-overlay">
-                        <span>Championnat 2025</span>
-                    </div>
+            <div class="organizers-inner">
+                <div class="organizer">
+                    <div class="organizer-logo ffk">FFKARATE</div>
+                    <p class="organizer-desc">Fédération Française de Karaté<br>et Disciplines Associées</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://pbs.twimg.com/media/FuK6H4-WwAAdy6r?format=jpg&name=large" alt="Karaté Chambly">
-                    <div class="gallery-overlay">
-                        <span>Équipe de France</span>
-                    </div>
+                <div class="organizer-divider"></div>
+                <div class="organizer">
+                    <div class="organizer-logo locomotive">LE LOCOMOTIVE<br>CAMBLYSIEN</div>
+                    <p class="organizer-desc">Karaté Club de Chambly<br>Organisateur local</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://pbs.twimg.com/media/FuK6H4-XEAAuF2y?format=jpg&name=large" alt="Kata Competition">
-                    <div class="gallery-overlay">
-                        <span>Finale Kata</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://pbs.twimg.com/media/FuK6H4-WAAAEfO6?format=jpg&name=large" alt="Combat Karaté">
-                    <div class="gallery-overlay">
-                        <span>Cérémonie</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="galerie.html" class="btn btn-primary">Voir toute la galerie</a>
             </div>
         </div>
     </section>
 
-    <!-- Organizers -->
-    <section class="section">
+    <!-- CTA -->
+    <section class="cta-section">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <span>Organisation</span>
-                <h2>Les Organisateurs</h2>
-            </div>
-            
-            <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;" class="animate-on-scroll">
-                <div style="text-align: center;">
-                    <div style="background: var(--ffk-gray-light); padding: 30px 50px; border-radius: 15px;">
-                        <p style="font-weight: 700; font-size: 1.25rem; color: var(--ffk-red);">FFKARATE</p>
-                        <p style="color: var(--ffk-gray-dark);">Fédération Française de Karaté et Disciplines Associées</p>
-                    </div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="background: var(--ffk-gray-light); padding: 30px 50px; border-radius: 15px;">
-                        <p style="font-weight: 700; font-size: 1.25rem; color: var(--ffk-blue);">LE LOCOMOTIVE CAMBLYSIEN</p>
-                        <p style="color: var(--ffk-gray-dark);">Karaté Club de Chambly</p>
-                    </div>
-                </div>
-            </div>
+            <h2 class="cta-title">Vous êtes athlète ?</h2>
+            <p class="cta-text">Les inscriptions s'effectuent via la plateforme fédérale FFkarate avec votre compte Sikada.</p>
+            <a href="inscriptions.html" class="btn btn-cta">Accéder aux inscriptions</a>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section section-red">
-        <div class="container" style="text-align: center;">
-            <h2 class="animate-on-scroll" style="margin-bottom: 20px;">Vous êtes Athlète ?</h2>
-            <p class="animate-on-scroll" style="font-size: 1.25rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Les inscriptions se font via la plateforme fédérale FFkarate avec votre compte Sikada.
-            </p>
-            <div class="animate-on-scroll">
-                <a href="inscriptions.html" class="btn btn-secondary">Accéder aux inscriptions</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px;">
-                        <div class="logo-icon">🥋</div>
-                        <div class="logo-text">
-                            <span style="color: white;">LE LOCOMOTIVE CAMBLYSIEN</span>
-                            <span>Championnat de France Seniors KARATE 2026</span>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="8" fill="#E30613"/>
+                                <path d="M14 24L24 14L34 24L24 34L14 24Z" fill="white"/>
+                                <path d="M24 24L34 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M34 24L24 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M24 14V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M14 24H34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                         </div>
-                    </div>
-                    <p style="opacity: 0.8; margin-bottom: 20px;">
-                        Le Karaté Club de Chambly est fier d'accueillir cette compétition nationale majeure.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 20a3.5 3.5 0 0 1 .5-7.5"/><rect width="20" height="15" x="2" y="5" rx="2"/><path d="M10.5 8.5L14 10l-3.5 2.5"/></svg>
-                        </a>
-                    </div>
+                        <div class="logo-text">
+                            <span class="logo-text-main" style="color: white;">LE LOCOMOTIVE CAMBLYSIEN</span>
+                            <span class="logo-text-sub">FFKARATE</span>
+                        </div>
+                    </a>
+                    <p>Le Karaté Club de Chambly est fier d'accueillir cette compétition nationale majeure.</p>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>导航</h4>
+                    <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="programme.html">Programme</a></li>
                         <li><a href="galerie.html">Galerie</a></li>
                         <li><a href="resultats.html">Résultats</a></li>
                         <li><a href="inscriptions.html">Inscriptions</a></li>
-                        <li><a href="pratique.html">Informations</a></li>
                     </ul>
                 </div>
                 
@@ -436,7 +1288,6 @@
                         <li><a href="pratique.html">Comment venir</a></li>
                         <li><a href="pratique.html#contact">Contact</a></li>
                         <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Politique de confidentialité</a></li>
                     </ul>
                 </div>
                 
@@ -452,13 +1303,44 @@
             </div>
             
             <div class="footer-bottom">
-                <p style="opacity: 0.8;">© 2026 LE LOCOMOTIVE CAMBLYSIEN - FFKARATE</p>
-                <p style="margin-top: 10px; font-size: 0.875rem;">Organisé avec la Fédération Française de Karaté et Disciplines Associées</p>
+                <p>© 2026 LE LOCOMOTIVE CAMBLYSIEN — FFKARATE — Organisé avec la Fédération Française de Karaté</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('April 4, 2026 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
